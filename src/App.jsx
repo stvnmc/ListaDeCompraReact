@@ -17,7 +17,7 @@ function App() {
         <section className={`home ${isOpen ? 'open' : ''}`}>
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/product:id" element={<ProductDetails />} />
+            <Route path="/product/:id" element={<ProductDetails />} />
           </Routes>
           <Sidebar />
         </section>

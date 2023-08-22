@@ -50,33 +50,34 @@ const CartProvider = ({ children }) => {
     });
     if (cartItem) {
       const newCart = cart.map((item) => {
-        if (item.id === id) {
+        if (item.id === id && item.amount > 0) {
           return { ...item, amount: cartItem.amount - 1 };
         } else {
           return item;
         }
       });
       setCart(newCart);
-    } else {
-      if (cartItem.amount < 2) {
-        removeFromCart(id);
-      }
     }
   };
 
+  //total
   useEffect(() => {
-    setItemAmount(cart.length);
-    if (cart.length > 0) {
-    }
-    console.log(total);
-  }, [cart]);
+    const total = cart.reduce((accumulator, currentItem) => {
+      return accumulator + currentItem.price * currentItem.amount;
+    }, 0);
+    setTotal(total);
+  });
+
+  //amount
 
   useEffect(() => {
-    const cartss = cart.reduce((acumulado, initial) => {
-      return initial.amount + acumulado;
-    });
-    console.log(cartss);
-  }, []);
+    if (cart) {
+      const amount = cart.reduce((accumulator, currentItem) => {
+        return accumulator + currentItem.amount;
+      }, 0);
+      setItemAmount(amount);
+    }
+  }, [cart]);
 
   return (
     <CartContext.Provider

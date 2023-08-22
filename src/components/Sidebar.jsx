@@ -8,13 +8,12 @@ import { AiOutlineDelete } from "react-icons/ai";
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
-  const { cart, clearCart, total } = useContext(CartContext);
-
+  const { cart, clearCart, total, itemAmount } = useContext(CartContext);
   return (
     <section className={`Sidebar ${isOpen ? "open" : ""}`}>
       <div className="shopping">
         <GoArrowLeft onClick={() => handleClose()} />
-        <h2>Shopping BAG({cart.length})</h2>
+        <h2>Shopping BAG({itemAmount})</h2>
       </div>
       <div className="cartItems">
         {cart.map((item) => {

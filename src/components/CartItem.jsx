@@ -4,10 +4,10 @@ import { GrFormSubtract, GrFormAdd } from "react-icons/gr";
 import { CartContext } from "../contexts/CartContext";
 
 const CartItem = ({ item }) => {
-  const { removeFromCart, increaseAmount, decreaseAmount } =
-    useContext(CartContext);
-
+  const { removeFromCart, increaseAmount, decreaseAmount } = useContext(CartContext);
   const { img, price, name, amount, id } = item;
+
+  
   return (
     <figure className="cartItem">
       <img src={`${img}`} />
