@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from "react";
 import { SidebarContext } from "../contexts/SidebarContext";
 import { AiOutlineShoppingCart } from "react-icons/ai";
+import { FiSearch } from "react-icons/fi";
 import { CartContext } from "../contexts/CartContext";
 
 const Header = () => {
@@ -16,9 +17,22 @@ const Header = () => {
 
   return (
     <section className={`header ${isActive ? "open" : "close"}`}>
-      <div>Header {itemAmount}</div>
-
-      <AiOutlineShoppingCart onClick={() => setIsOpen(!isOpen)} />
+      <div className="title">
+        <h1>SHOPMARKET</h1>
+        <div className="search">
+          <input type="texto" />
+          <FiSearch />
+        </div>
+        <div>
+          {itemAmount}
+          <AiOutlineShoppingCart onClick={() => setIsOpen(!isOpen)} />
+        </div>
+      </div>
+      <div className="list">
+        <li>hola</li>
+        <li>sdsds</li>
+        <li>dsdsd</li>
+      </div>
     </section>
   );
 };
