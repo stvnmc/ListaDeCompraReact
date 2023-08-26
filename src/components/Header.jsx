@@ -23,15 +23,21 @@ const Header = () => {
           <input type="texto" />
           <FiSearch />
         </div>
-        <div>
-          {itemAmount}
+        <div className="iconShop">
+          <h2>{itemAmount}</h2>
           <AiOutlineShoppingCart onClick={() => setIsOpen(!isOpen)} />
         </div>
       </div>
       <div className="list">
-        <li>hola</li>
-        <li>sdsds</li>
-        <li>dsdsd</li>
+        <figure>
+          <h2>New & Featured products</h2>
+        </figure>
+        <figure>
+          <h2>Men</h2>
+        </figure>
+        <figure>
+          <h2>Women</h2>
+        </figure>
       </div>
     </section>
   );
