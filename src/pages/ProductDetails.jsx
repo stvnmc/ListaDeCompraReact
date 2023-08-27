@@ -16,13 +16,45 @@ const ProductDetails = () => {
     return <section>Loading</section>;
   }
 
-  console.log(product);
   const { name, price, description, img } = product;
 
   return (
-    <section>
-      <div>
-        <img src={img} />
+    <section className="productDetails">
+      <div className="similarProduct">
+        <figure>
+          <img src={img} />
+        </figure>
+        <figure>
+          <img src={img} />
+        </figure>
+        <figure>
+          <img src={img} />
+        </figure>
+        <figure>
+          <img src={img} />
+        </figure>
+        <figure>
+          <img src={img} />
+        </figure>
+        <figure>
+          <img src={img} />
+        </figure>
+        <figure>
+          <img src={img} />
+        </figure>
+        <figure>
+          <img src={img} />
+        </figure>
+      </div>
+      <div className="details">
+        <div className="detailsImg">
+          <img src={img} />
+        </div>
+        <div>
+          <h2>{name}</h2>
+          <h2>{price}</h2>
+          <h2>{description}</h2>
+        </div>
       </div>
     </section>
   );
