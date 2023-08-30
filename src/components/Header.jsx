@@ -3,6 +3,7 @@ import { SidebarContext } from "../contexts/SidebarContext";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { CartContext } from "../contexts/CartContext";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
@@ -18,7 +19,9 @@ const Header = () => {
   return (
     <section className={`header ${isActive ? "open" : "close"}`}>
       <div className="title">
-        <h1>SHOPMARKET</h1>
+        <Link to={`/`}>
+          <h1>SHOPMARKET</h1>
+        </Link>
         <div className="search">
           <input type="texto" />
           <FiSearch />

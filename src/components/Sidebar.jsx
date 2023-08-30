@@ -16,8 +16,8 @@ const Sidebar = () => {
         <h2>Shopping BAG({itemAmount})</h2>
       </div>
       <div className="cartItems">
-        {cart.map((item) => {
-          return <CartItem item={item} key={item.id} />;
+        {cart.map((item, i) => {
+          return <CartItem item={item} key={i} />;
         })}
       </div>
       <div className="total">
