@@ -5,8 +5,6 @@ import { BiMessageSquareAdd } from "react-icons/bi";
 
 const Product = ({ products }) => {
   const { addToCart } = useContext(CartContext);
-;
-
   const { img, name, id, descriptions, price } = products;
 
   return (
@@ -21,12 +19,14 @@ const Product = ({ products }) => {
           <Link to={`/product/${id}`}>
             <h2>{name}</h2>
           </Link>
-          <BiMessageSquareAdd className="icon" onClick={() => addToCart(products, id)} />
+          <BiMessageSquareAdd
+            className="icon"
+            onClick={() => addToCart(products, id)}
+          />
         </div>
-
-        <div>
+        <div className="descriPrice">
           <h3>{descriptions}</h3>
-          <h3>{price}</h3>
+          <p>$ {price}</p>
         </div>
       </div>
     </figure>

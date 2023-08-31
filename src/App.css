@@ -14,6 +14,10 @@ body {
   overflow-x: hidden;
 }
 
+h2 {
+  font-size: 1.3rem;
+}
+
 
 /* home */
 
@@ -32,7 +36,16 @@ body {
 .header {
   width: 99vw;
   background-color: bisque;
+  z-index: 100;
+  transition: top 1s;
 }
+
+.header.open {
+  position: sticky;
+  top: 0;
+  left: 0;
+}
+
 
 .title {
   display: flex;
@@ -88,9 +101,20 @@ body {
   justify-content: space-evenly;
 }
 
+.header.open .list {
+  display: none;
+}
+
+
 .list figure {
   width: 16vw;
   text-align: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.list figure div{
+  position: absolute;
 }
 
 /* Products */
@@ -98,13 +122,14 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 0 7vw;
+  padding: 16vh 7vw;
+  gap: 3rem;
 }
 
 .products {
-  width: 290px;
+  width: 311px;
   height: 61vh;
-  margin: 4vh 1vw;
+  margin-bottom: 8vh;
 }
 
 .productsImg {
@@ -133,18 +158,26 @@ body {
 
 .nameAdd {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: flex-end;
+  margin-bottom: 0.8vh;
 }
 
 .nameAdd .icon {
   font-size: 3rem;
+  cursor: pointer;
+}
+
+.descriPrice {
+  padding: 0 7px;
 }
 
 .productsInfo h2,
 .productsInfo h3 {
-  margin-bottom: 0.8vh;
+  margin-bottom: 0.7vh;
 }
+
+
 
 
 

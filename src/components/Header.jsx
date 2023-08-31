@@ -11,13 +11,26 @@ const Header = () => {
   const { itemAmount } = useContext(CartContext);
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {
-      window.scrollY > 60 ? setIsActive(true) : setIsActive(false);
-    });
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsActive(window.scrollY < prevScrollY);
+        prevScrollY = window.scrollY;
+      } else {
+        setIsActive(false);
+      }
+    };
+
+    let prevScrollY = window.scrollY;
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   });
 
   return (
-    <section className={`header ${isActive ? "open" : "close"}`}>
+    <section className={`${isActive ? "header open" : "header"}`}>
       <div className="title">
         <Link to={`/`}>
           <h1>SHOPMARKET</h1>
@@ -32,13 +45,26 @@ const Header = () => {
         </div>
       </div>
       <div className="list">
-        <figure>
+        <figure
+          onClick={() => {
+            console.log("new");
+          }}
+        >
           <h2>New & Featured products</h2>
+          <div>hola</div>
         </figure>
-        <figure>
+        <figure
+          onClick={() => {
+            console.log("men");
+          }}
+        >
           <h2>Men</h2>
         </figure>
-        <figure>
+        <figure
+          onClick={() => {
+            console.log("women");
+          }}
+        >
           <h2>Women</h2>
         </figure>
       </div>
