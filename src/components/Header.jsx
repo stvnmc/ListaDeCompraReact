@@ -4,11 +4,17 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
 import { CartContext } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
+import Menu from "./Menu";
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
   const { itemAmount } = useContext(CartContext);
+  const [menuStates, setMenuStates] = useState({
+    newFeatured: false,
+    women: false,
+    men: false,
+  });
 
   useEffect(() => {
     const handleScroll = () => {
@@ -27,7 +33,43 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, []);
+
+  const toggleMenu = (menuName) => {
+    setMenuStates((prevState) => ({
+      newFeatured: menuName === "newFeatured" ? !prevState.newFeatured : false,
+      women: menuName === "women" ? !prevState.women : false,
+      men: menuName === "men" ? !prevState.men : false,
+    }));
+  };
+  const menuItems = [
+    {
+      name: "newFeatured",
+      title: "New & Featured products",
+      items: [
+        { name: "new", link: "/new" },
+        { name: "Featured products", link: "/featured" },
+        { name: "ofertas", link: "/offers" },
+      ],
+    },
+    {
+      name: "women",
+      title: "Women",
+      items: [
+        { name: "new", link: "/women-new" },
+        { name: "tennis", link: "/women-tennis" },
+        { name: "formal shoes", link: "/women-formal-shoes" },
+      ],
+    },
+    {
+      name: "men",
+      title: "Men",
+      items: [
+        { name: "tennis", link: "/men-tennis" },
+        { name: "formal shoes", link: "/men-formal-shoes" },
+      ],
+    },
+  ];
 
   return (
     <section className={`${isActive ? "header open" : "header"}`}>
@@ -36,7 +78,7 @@ const Header = () => {
           <h1>SHOPMARKET</h1>
         </Link>
         <div className="search">
-          <input type="texto" />
+          <input type="text" />
           <FiSearch />
         </div>
         <div className="iconShop">
@@ -45,28 +87,15 @@ const Header = () => {
         </div>
       </div>
       <div className="list">
-        <figure
-          onClick={() => {
-            console.log("new");
-          }}
-        >
-          <h2>New & Featured products</h2>
-          <div>hola</div>
-        </figure>
-        <figure
-          onClick={() => {
-            console.log("men");
-          }}
-        >
-          <h2>Men</h2>
-        </figure>
-        <figure
-          onClick={() => {
-            console.log("women");
-          }}
-        >
-          <h2>Women</h2>
-        </figure>
+        {menuItems.map(({ name, title, items }) => (
+          <Menu
+            key={name}
+            title={title}
+            isActive={menuStates[name]}
+            toggleMenu={() => toggleMenu(name)}
+            items={items}
+          />
+        ))}
       </div>
     </section>
   );
