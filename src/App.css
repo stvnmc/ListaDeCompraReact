@@ -148,14 +148,21 @@ h2 {
   position: relative;
 }
 
-.menu.open {
-  position: absolute;
-  background-color: #a7a49e;
+.menu {
+  height: 16vh;
 }
 
-.menu.close {
+.menuLinks {
+  display: flex;
+  height: 52%;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.header.open .menu {
   display: none;
 }
+
 
 
 

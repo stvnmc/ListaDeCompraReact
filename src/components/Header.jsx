@@ -10,15 +10,12 @@ const Header = () => {
   const [isActive, setIsActive] = useState(false);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
   const { itemAmount } = useContext(CartContext);
-  const [menuStates, setMenuStates] = useState({
-    newFeatured: false,
-    women: false,
-    men: false,
-  });
+
+  const [activeMenu, setActiveMenu] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      if (window.scrollY > 40) {
         setIsActive(window.scrollY < prevScrollY);
         prevScrollY = window.scrollY;
       } else {
@@ -36,16 +33,13 @@ const Header = () => {
   }, []);
 
   const toggleMenu = (menuName) => {
-    setMenuStates((prevState) => ({
-      newFeatured: menuName === "newFeatured" ? !prevState.newFeatured : false,
-      women: menuName === "women" ? !prevState.women : false,
-      men: menuName === "men" ? !prevState.men : false,
-    }));
+    setActiveMenu((prevMenu) => {
+      return menuName === prevMenu ? null : menuName;
+    });
   };
   const menuItems = [
     {
       name: "newFeatured",
-      title: "New & Featured products",
       items: [
         { name: "new", link: "/new" },
         { name: "Featured products", link: "/featured" },
@@ -54,7 +48,6 @@ const Header = () => {
     },
     {
       name: "women",
-      title: "Women",
       items: [
         { name: "new", link: "/women-new" },
         { name: "tennis", link: "/women-tennis" },
@@ -63,9 +56,9 @@ const Header = () => {
     },
     {
       name: "men",
-      title: "Men",
       items: [
         { name: "tennis", link: "/men-tennis" },
+        { name: "formal shoes", link: "/men-formal-shoes" },
         { name: "formal shoes", link: "/men-formal-shoes" },
       ],
     },
@@ -81,22 +74,19 @@ const Header = () => {
           <input type="text" />
           <FiSearch />
         </div>
-        <div className="iconShop">
+        <div className="iconShop" onClick={() => setIsOpen(!isOpen)}>
           <h2>{itemAmount}</h2>
-          <AiOutlineShoppingCart onClick={() => setIsOpen(!isOpen)} />
+          <AiOutlineShoppingCart />
         </div>
       </div>
       <div className="list">
-        {menuItems.map(({ name, title, items }) => (
-          <Menu
-            key={name}
-            title={title}
-            isActive={menuStates[name]}
-            toggleMenu={() => toggleMenu(name)}
-            items={items}
-          />
+        {menuItems.map(({ name }, i) => (
+          <figure onClick={() => toggleMenu(name)} key={i}>
+            <h2>{name}</h2>
+          </figure>
         ))}
       </div>
+      <Menu activeMenu={activeMenu} items={menuItems} />
     </section>
   );
 };
