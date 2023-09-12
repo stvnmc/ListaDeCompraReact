@@ -14,6 +14,7 @@ const CartProvider = ({ children }) => {
     const cartItem = cart.find((item) => {
       return item.id === id;
     });
+    
     if (cartItem) {
       const newCart = [...cart].map((item) => {
         if (item.id === id) {

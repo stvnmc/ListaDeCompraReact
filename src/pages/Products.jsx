@@ -4,7 +4,7 @@ import Product from "../components/Product";
 
 const Products = () => {
   const { products } = useContext(ProductContext);
-  
+
   return (
     <React.Fragment>
       <div className="contentProducts">

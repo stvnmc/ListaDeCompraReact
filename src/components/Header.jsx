@@ -5,12 +5,14 @@ import { FiSearch } from "react-icons/fi";
 import { CartContext } from "../contexts/CartContext";
 import { Link } from "react-router-dom";
 import Menu from "./Menu";
+import { ProductContext } from "../contexts/ProductContext";
 
 const Header = () => {
-  const [isActive, setIsActive] = useState(false);
+  const { producTaught } = useContext(ProductContext);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
   const { itemAmount } = useContext(CartContext);
 
+  const [isActive, setIsActive] = useState(false);
   const [activeMenu, setActiveMenu] = useState(null);
 
   useEffect(() => {
@@ -37,35 +39,36 @@ const Header = () => {
       return menuName === prevMenu ? null : menuName;
     });
   };
+
   const menuItems = [
     {
-      name: "newFeatured",
+      name: "NewFeatured",
       items: [
-        { name: "new", link: "/new" },
-        { name: "Featured products", link: "/featured" },
-        { name: "ofertas", link: "/offers" },
+        { name: "All Products" },
+        { name: "new" },
+        { name: "Featured products" },
       ],
     },
     {
-      name: "women",
+      name: "Women",
       items: [
-        { name: "new", link: "/women-new" },
-        { name: "tennis", link: "/women-tennis" },
-        { name: "formal shoes", link: "/women-formal-shoes" },
+        { name: "All Women" },
+        { name: "tennis" },
+        { name: "formal shoes" },
       ],
     },
     {
-      name: "men",
+      name: "Men",
       items: [
-        { name: "tennis", link: "/men-tennis" },
-        { name: "formal shoes", link: "/men-formal-shoes" },
-        { name: "formal shoes", link: "/men-formal-shoes" },
+        { name: "tennis" },
+        { name: "formal shoes" },
+        { name: "formal shoes" },
       ],
     },
   ];
 
   return (
-    <section className={`${isActive ? "header open" : "header"}`}>
+    <section className={`header${isActive ? "open" : ""}`}>
       <div className="title">
         <Link to={`/`}>
           <h1>SHOPMARKET</h1>
@@ -86,7 +89,11 @@ const Header = () => {
           </figure>
         ))}
       </div>
-      <Menu activeMenu={activeMenu} items={menuItems} />
+      <Menu
+        activeMenu={activeMenu}
+        items={menuItems}
+        producTaught={producTaught}
+      />
     </section>
   );
 };
