@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { imgUrlHome } from "../data/listOfProducts";
+import { imgUrlHome } from "../data/infoOfPage";
 
 const VerticalLetters = () => {
   const text = "Text Ejemplo";
@@ -26,6 +26,25 @@ const GridItem = ({ content, gridArea, vertical, centered }) => {
 };
 
 const Home = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setCurrentIndex((prevIndex) => (prevIndex + 1) % promo.length);
+    }, 3500);
+
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, []);
+
+  const promo = [
+    "New Markdowns: Up to 40% Off",
+    "Shop All New Arrivals",
+    "Members: Free Shipping on Orders $50+",
+    "Why Wait? Try Store Pickup",
+  ];
+
   const gridItems = [
     {
       content: <img src={imgUrlHome.img1} alt="Descripción de la imagen" />,
@@ -79,6 +98,18 @@ const Home = () => {
 
   return (
     <section className="homehome">
+      <div
+        className={`promocion`}
+        style={{ transform: `translateX(${-100 * currentIndex}vw)` }}
+      >
+        {promo.map((item, index) => (
+          <div key={index}>
+            <h1>{item}</h1>
+            <a>jasdsdsdsdfj</a>
+          </div>
+        ))}
+      </div>
+
       <div className="contImg">
         {gridItems.map((item, index) => (
           <GridItem

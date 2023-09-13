@@ -7,6 +7,22 @@ const Product = ({ products }) => {
   const { addToCart } = useContext(CartContext);
   const { img, name, id, descriptions, price } = products;
 
+  //   // Define la longitud máxima para la descripción
+  const maxDescriptionLength = 70;
+
+  // Trunca la descripción si es más larga que la longitud máxima
+  const truncatedDescription =
+    descriptions.length > maxDescriptionLength ? (
+      <>
+        {descriptions.slice(0, maxDescriptionLength)}
+        <Link to={`/product/${id}`}>
+          <span>... ver mas</span>
+        </Link>
+      </>
+    ) : (
+      descriptions
+    );
+
   return (
     <figure className="products">
       <Link to={`/product/${id}`}>
@@ -25,7 +41,7 @@ const Product = ({ products }) => {
           />
         </div>
         <div className="descriPrice">
-          <h3>{descriptions}</h3>
+          <h3>{truncatedDescription}</h3>
           <p>$ {price}</p>
         </div>
       </div>

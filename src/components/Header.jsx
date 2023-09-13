@@ -1,28 +1,26 @@
 import React, { useContext, useEffect, useState } from "react";
-import { SidebarContext } from "../contexts/SidebarContext";
+import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { FiSearch } from "react-icons/fi";
+import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
-import { Link } from "react-router-dom";
-import Menu from "./Menu";
 import { ProductContext } from "../contexts/ProductContext";
 
 const Header = () => {
-  const { producTaught } = useContext(ProductContext);
+  // Contextos
+  const { producTaught, valor } = useContext(ProductContext);
   const { isOpen, setIsOpen } = useContext(SidebarContext);
   const { itemAmount } = useContext(CartContext);
 
+  // Estado para el efecto de scroll
   const [isActive, setIsActive] = useState(false);
-  const [activeMenu, setActiveMenu] = useState(null);
 
+  // Manejar el efecto de scroll
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 40) {
-        setIsActive(window.scrollY < prevScrollY);
-        prevScrollY = window.scrollY;
-      } else {
-        setIsActive(false);
-      }
+      const scrollY = window.scrollY;
+      setIsActive(scrollY > 40 && scrollY < prevScrollY);
+      prevScrollY = scrollY;
     };
 
     let prevScrollY = window.scrollY;
@@ -34,66 +32,38 @@ const Header = () => {
     };
   }, []);
 
-  const toggleMenu = (menuName) => {
-    setActiveMenu((prevMenu) => {
-      return menuName === prevMenu ? null : menuName;
-    });
-  };
-
-  const menuItems = [
-    {
-      name: "NewFeatured",
-      items: [
-        { name: "All Products" },
-        { name: "new" },
-        { name: "Featured products" },
-      ],
-    },
-    {
-      name: "Women",
-      items: [
-        { name: "All Women" },
-        { name: "tennis" },
-        { name: "formal shoes" },
-      ],
-    },
-    {
-      name: "Men",
-      items: [
-        { name: "tennis" },
-        { name: "formal shoes" },
-        { name: "formal shoes" },
-      ],
-    },
-  ];
+  // Datos de los elementos del menú, search
+  const menuItems = ["All Products", "Women", "Men"];
 
   return (
-    <section className={`header${isActive ? "open" : ""}`}>
+    <section className={`header ${isActive ? "open" : ""}`}>
       <div className="title">
         <Link to={`/`}>
           <h1>SHOPMARKET</h1>
         </Link>
         <div className="search">
-          <input type="text" />
           <FiSearch />
+          <input
+            type="text"
+            placeholder="Search..."
+            onChange={(e) => valor(e.target.value)}
+          />
         </div>
         <div className="iconShop" onClick={() => setIsOpen(!isOpen)}>
           <h2>{itemAmount}</h2>
           <AiOutlineShoppingCart />
         </div>
       </div>
+      <div className="lineaNegra"></div>
       <div className="list">
-        {menuItems.map(({ name }, i) => (
-          <figure onClick={() => toggleMenu(name)} key={i}>
-            <h2>{name}</h2>
-          </figure>
+        {menuItems.map((name, i) => (
+          <Link to="/product" key={i}>
+            <figure onClick={() => producTaught(name)}>
+              <h2>{name}</h2>
+            </figure>
+          </Link>
         ))}
       </div>
-      <Menu
-        activeMenu={activeMenu}
-        items={menuItems}
-        producTaught={producTaught}
-      />
     </section>
   );
 };

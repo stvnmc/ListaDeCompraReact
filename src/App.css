@@ -15,14 +15,37 @@ body {
 }
 
 h2 {
-  font-size: 1.3rem;
+  font-size: 1.6rem;
+}
+
+svg {
+  cursor: pointer;
 }
 
 
+/* home */
 .homehome {
-  margin-top: 13vh;
-
+  margin-top: 16vh;
+  position: relative;
 }
+
+.promocion {
+  display: flex;
+  position: absolute;
+  top: -12vh;
+  transition: 0.7s;
+  background-color: #c5c5c5;
+}
+
+.promocion div {
+  width: 100vw;
+  height: 8vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
 
 .centered {
   display: flex;
@@ -60,6 +83,7 @@ h2 {
   display: flex;
   width: 100%;
   transition: 0.5s;
+  margin-bottom: 20vh;
 }
 
 .home.open {
@@ -96,18 +120,34 @@ h2 {
 .search {
   display: flex;
   align-items: center;
+  font-size: 1rem;
+  width: 27vw;
+  background-color: #a1a1a1;
+  height: 2.7vh;
+  border-radius: 35px;
+  padding: 13px;
 }
 
+
+
+
 .search input {
-  width: 34vw;
+  width: 23vw;
   height: 4vh;
-  background-color: rgb(246, 231, 212);
-  border: 1px solid rgb(235 225 211);
+  background-color: #a1a1a1;
+  border: 1px solid transparent;
   border-radius: 10px;
+  font-size: 18px;
+  padding-left: 6px
+}
+
+.search input:focus {
+  outline: none;
 }
 
 .iconShop {
   position: relative;
+  width: 7vw;
 }
 
 .search svg {
@@ -121,7 +161,7 @@ h2 {
 
 .iconShop h2 {
   position: absolute;
-  right: -11px;
+  right: 59px;
   top: -16px;
   background-color: rgb(228, 88, 88);
   border-radius: 20px;
@@ -130,9 +170,17 @@ h2 {
   text-align: center;
 }
 
+
+.lineaNegra {
+  width: 76%;
+  margin: auto;
+  height: 1px;
+  background-color: #3b2525;
+}
+
+
 .list {
   display: flex;
-  height: 35%;
   justify-content: space-evenly;
 }
 
@@ -142,10 +190,12 @@ h2 {
 
 
 .list figure {
-  width: 16vw;
-  text-align: center;
+  width: 17vw;
+  height: 7vh;
+  display: flex;
   cursor: pointer;
-  position: relative;
+  align-items: center;
+  justify-content: center;
 }
 
 .menu {

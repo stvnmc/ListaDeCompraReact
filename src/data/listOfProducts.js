@@ -2,7 +2,7 @@ export const ListOfProducts = [
   {
     id: "1",
     name: "Nike SuperRep Go 2",
-    gender: "Men",
+    characteristics: "Men",
     descriptions:
       "as Nike SuperRep Go son zapatillas deportivas diseñadas para entrenamientos de alta intensidad y actividades aeróbicas. Ofrecen amortiguación y soporte para ayudar a los atletas a mantenerse cómodos durante sus sesiones de ejercicio.",
     price: "95",
@@ -12,7 +12,7 @@ export const ListOfProducts = [
   {
     id: "2",
     name: "Nike Air Force 1",
-    gender: "Men",
+    characteristics: "Women",
     descriptions:
       " Las Nike Air Force 1 son unas icónicas zapatillas deportivas de baloncesto lanzadas por Nike en 1982. Se caracterizan por su diseño clásico y versátil, con una parte superior de cuero y una suela de goma resistente.",
     price: "94",
@@ -21,7 +21,7 @@ export const ListOfProducts = [
   {
     id: "3",
     name: " Nike Air altas blancas",
-    gender: "Men",
+    characteristics: "Men",
     descriptions:
       "Las Nike Air Force 1 altas en color blanco son icónicas y versátiles, ideales para combinar con diversos estilos de moda. Estas zapatillas deportivas suelen estar hechas de cuero de alta calidad y presentan un diseño clásico y atemporal.",
     price: "95",
@@ -30,7 +30,7 @@ export const ListOfProducts = [
   {
     id: "4",
     name: "Nike Air Force 1 altas",
-    gender: "Men",
+    characteristics: "Men",
     descriptions:
       "Las Nike Air Force 1 altas en color blanco son icónicas y versátiles, ideales para combinar con diversos estilos de moda. Estas zapatillas deportivas suelen estar hechas de cuero de alta calidad y presentan un diseño clásico y atemporal. ",
     price: "102",
@@ -39,7 +39,7 @@ export const ListOfProducts = [
   {
     id: "5",
     name: "Nike Air Force 1 React White OG",
-    gender: "Men",
+    characteristics: "Men",
     descriptions:
       "Las zapatillas Nike Air Force 1 React White OG combinan el diseño clásico y atemporal de las Air Force 1 con la tecnología React de Nike para ofrecer una comodidad excepcional y un estilo fresco. Están diseñadas con una parte superior de cuero blanco que presenta detalles en los paneles laterales y el talón. ",
     price: "140",
@@ -48,7 +48,7 @@ export const ListOfProducts = [
   {
     id: "6",
     name: "Nike Air Force 1 Low Utility Black White",
-    gender: "Men",
+    characteristics: "Men",
     descriptions:
       "Las zapatillas Nike Air Force 1 Low Utility Black White son conocidas por su diseño versátil y llamativo. Presentan una parte superior de cuero en color negro, con detalles en blanco que contrastan, incluyendo el logo de Nike en la lengüeta y la marca en el talón. ",
     price: "135",
@@ -57,55 +57,61 @@ export const ListOfProducts = [
   {
     id: "7",
     name: "ZAPATILLAS ANAHEIM FACTORY SK8-HI 38 DX",
-    gender: "Men",
-    descriptions: "Las zapatillas Vans Anaheim Factory Sk8-Hi 38 DX son un clásico reinventado con un toque vintage y detalles de calidad. Estas zapatillas de skate de alta calidad presentan una parte superior de lona y ante con detalles retro de la fábrica original de Vans en Anaheim, California. ",
+    characteristics: "Men",
+    descriptions:
+      "Las zapatillas Vans Anaheim Factory Sk8-Hi 38 DX son un clásico reinventado con un toque vintage y detalles de calidad. Estas zapatillas de skate de alta calidad presentan una parte superior de lona y ante con detalles retro de la fábrica original de Vans en Anaheim, California. ",
     price: "90",
     img: "https://images.unsplash.com/photo-1608953611973-7b7a921c8fd2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
   },
   {
     id: "8",
     name: "NIKE SB Dunk High Pro SPECTRUM",
-    gender: "Men",
-    descriptions: "Las zapatillas NIKE SB Dunk High Pro Spectrum son una versión de alta calidad de las populares zapatillas Dunk de Nike diseñadas específicamente para el skateboarding. Estas zapatillas presentan una parte superior de cuero duradero con paneles de malla para una excelente transpirabilidad.",
+    characteristics: "Men",
+    descriptions:
+      "Las zapatillas NIKE SB Dunk High Pro Spectrum son una versión de alta calidad de las populares zapatillas Dunk de Nike diseñadas específicamente para el skateboarding. Estas zapatillas presentan una parte superior de cuero duradero con paneles de malla para una excelente transpirabilidad.",
     price: "125",
     img: "https://images.unsplash.com/photo-1584735175315-9d5df23860e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
   },
   {
     id: "9",
     name: "Converse Chuck Taylor All-Star 70",
-    gender: "Women",
-    descriptions: "Las Converse Chuck Taylor All-Star 70 Hi son una versión mejorada y más premium de las icónicas zapatillas Chuck Taylor All-Star de Converse. Estas zapatillas se destacan por su estilo clásico y atemporal, con una parte superior de lona resistente y una suela de goma vulcanizada que proporciona durabilidad y tracción.",
+    characteristics: "Women",
+    descriptions:
+      "Las Converse Chuck Taylor All-Star 70 Hi son una versión mejorada y más premium de las icónicas zapatillas Chuck Taylor All-Star de Converse. Estas zapatillas se destacan por su estilo clásico y atemporal, con una parte superior de lona resistente y una suela de goma vulcanizada que proporciona durabilidad y tracción.",
     price: "95",
     img: "https://images.unsplash.com/photo-1619521441007-ade17aa6bae9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
   },
   {
     id: "10",
     name: "Shinelly Botines gruesos de tacón",
-    gender: "Women",
-    descriptions: "Las zapatillas Bally 'Mitty' son una elección de calzado elegante y de alta calidad. Estas zapatillas suelen destacar por su diseño moderno y sofisticado, con una parte superior que puede estar hecha de cuero de primera calidad u otros materiales de alta calidad.",
+    characteristics: "Women",
+    descriptions:
+      "Las zapatillas Bally 'Mitty' son una elección de calzado elegante y de alta calidad. Estas zapatillas suelen destacar por su diseño moderno y sofisticado, con una parte superior que puede estar hecha de cuero de primera calidad u otros materiales de alta calidad.",
     price: "85",
     img: "https://images.unsplash.com/photo-1610398752800-146f269dfcc8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
   },
   {
     id: "11",
     name: "Bally 'Mitty' Sneakers",
-    gender: "Women",
-    descriptions: "Las zapatillas Bally 'Mitty' son una elección de calzado elegante y de alta calidad. Estas zapatillas suelen destacar por su diseño moderno y sofisticado, con una parte superior que puede estar hecha de cuero de primera calidad u otros materiales de alta calidad.",
+    characteristics: "Women",
+    descriptions:
+      "Las zapatillas Bally 'Mitty' son una elección de calzado elegante y de alta calidad. Estas zapatillas suelen destacar por su diseño moderno y sofisticado, con una parte superior que puede estar hecha de cuero de primera calidad u otros materiales de alta calidad.",
     price: "102",
     img: "https://images.unsplash.com/photo-1603808033176-9d134e6f2c74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=715&q=80",
   },
   {
     id: "12",
     name: "Nike Legend Essential 2 PRM",
-    gender: "Men",
-    descriptions: "Las zapatillas Nike Legend Essential 2 PRM son una elección de calzado deportivo de alta calidad y estilo moderno. Están diseñadas para brindar comodidad y rendimiento durante tus entrenamientos y actividades deportivas.",
+    characteristics: "Men",
+    descriptions:
+      "Las zapatillas Nike Legend Essential 2 PRM son una elección de calzado deportivo de alta calidad y estilo moderno. Están diseñadas para brindar comodidad y rendimiento durante tus entrenamientos y actividades deportivas.",
     price: "95",
     img: "https://images.unsplash.com/photo-1605408499391-6368c628ef42?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80",
   },
   {
     id: "13",
     name: "Brown shoes",
-    gender: "Men",
+    characteristics: "Men",
     descriptions:
       "Brown Shoes are a stylish and versatile pair of shoes that go perfectly with both casual and formal outfits.",
     price: "110",
@@ -114,7 +120,7 @@ export const ListOfProducts = [
   {
     id: "13",
     name: "Tacones Rosados",
-    gender: "Women",
+    characteristics: "Women",
     descriptions:
       "Brown Shoes are a stylish and versatile pair of shoes that go perfectly with both casual and formal outfits.",
     price: "110",
@@ -123,7 +129,7 @@ export const ListOfProducts = [
   {
     id: "14",
     name: "Platform sandals",
-    gender: "Women",
+    characteristics: "Women",
     descriptions:
       "The Platform Sandals are a type of fashion footwear that are characterized by their thick and elevated sole, which provides height and style to whoever wears them.",
     price: "75",
@@ -132,7 +138,7 @@ export const ListOfProducts = [
   {
     id: "15",
     name: "Black Stiletto",
-    gender: "Women",
+    characteristics: "Women",
     descriptions:
       "The Black Stilettos are a type of high-heeled shoe with an elegant and sophisticated design. They are ideal for formal events and special occasions.",
     price: "125",
@@ -141,7 +147,7 @@ export const ListOfProducts = [
   {
     id: "16",
     name: "Ollio Oxford",
-    gender: "Women",
+    characteristics: "Women",
     descriptions:
       "Los Ollio Oxford son un tipo de zapato Oxford de mujer que combina estilo clásico con comodidad. Están diseñados para brindar un toque de elegancia a tu vestimenta cotidiana. ",
     price: "38",
@@ -150,7 +156,7 @@ export const ListOfProducts = [
   {
     id: "17",
     name: "Polo Ralph Lauren Court",
-    gender: "Women",
+    characteristics: "Women",
     descriptions:
       "The Polo Ralph Lauren Court are sports shoes from the well-known brand Ralph Lauren. These sneakers often combine style and comfort, making them popular for casual and sporty wear.",
     price: "95",
@@ -159,7 +165,7 @@ export const ListOfProducts = [
   {
     id: "18",
     name: "Heeled shoes",
-    gender: "Women",
+    characteristics: "Women",
     descriptions:
       "Los Heeled Shoes, o zapatos de tacón alto, son un tipo de calzado elegante y versátil que aporta altura y estilo a tu apariencia. Los precios de estos zapatos pueden variar significativamente según la marca, el diseño y el material.",
     price: "120",
@@ -168,7 +174,7 @@ export const ListOfProducts = [
   {
     id: "19",
     name: "Women's originalGrand Wingtip Oxford",
-    gender: "Women",
+    characteristics: "Women",
     descriptions:
       "Los Women's originalGrand Wingtip Oxford son un par de zapatos oxford de ala de la conocida marca Cole Haan. Estos zapatos son conocidos por combinar la elegancia clásica con la comodidad moderna, gracias a su tecnología Grand.",
     price: "155",
@@ -177,7 +183,7 @@ export const ListOfProducts = [
   {
     id: "20",
     name: "Heels blue",
-    gender: "Women",
+    characteristics: "Women",
     descriptions:
       "The Blue Heels, or blue heels, are a type of high-heeled footwear with an elegant and attractive blue color. They are ideal for events and special occasions, as they add a touch of sophistication and style to your outfit.",
     price: "85",
@@ -185,11 +191,4 @@ export const ListOfProducts = [
   },
 ];
 
-export const imgUrlHome = {
-  img1: "https://images.unsplash.com/photo-1588117260148-b47818741c74?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-  img2: "https://images.unsplash.com/photo-1677055089360-c2aa1ac5d20e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80",
-  img3: "https://images.unsplash.com/photo-1593010932917-92bd21088dee?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1965&q=80",
-  img4: "https://images.unsplash.com/photo-1637666522102-bdb1c9d84b5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80",
-  img5: "https://images.unsplash.com/photo-1604888989902-6c8d8617e02a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1974&q=80",
-  img6: "https://images.unsplash.com/photo-1543996469-600fbadfc1e8?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1587&q=80",
-};
+
