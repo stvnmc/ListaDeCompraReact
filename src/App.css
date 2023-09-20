@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Manrope&display=swap");
 
 * {
-  font-family: 'Manrope', sans-serif;
+  font-family: "Manrope", sans-serif;
   margin: 0;
   padding: 0;
   color: inherit;
@@ -12,6 +12,8 @@
 
 body {
   overflow-x: hidden;
+  background-color: hsl(0, 0%, 95%);
+  position: relative;
 }
 
 h2 {
@@ -22,19 +24,18 @@ svg {
   cursor: pointer;
 }
 
-
 /* home */
 .homehome {
-  margin-top: 16vh;
+  margin-top: 20vh;
   position: relative;
 }
 
 .promocion {
   display: flex;
   position: absolute;
-  top: -12vh;
+  top: -16vh;
   transition: 0.7s;
-  background-color: #c5c5c5;
+  background-color: #b4b4b3;
 }
 
 .promocion div {
@@ -46,22 +47,31 @@ svg {
   flex-direction: column;
 }
 
-
 .centered {
   display: flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
 }
 
+.centered h2 {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
 .vertical {
+  padding: 4rem;
   border: 1px solid #ccc;
   flex-direction: column;
+}
+
+.vertical span {
+  font-size: 2rem;
 }
 
 .contImg {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(3, 1fr);
   gap: 1rem;
   padding: 4rem;
 }
@@ -76,7 +86,6 @@ svg {
   height: 100%;
 }
 
-
 /* home */
 
 .home {
@@ -90,11 +99,11 @@ svg {
   width: 60%;
 }
 
+/*///////////////////////////////////////////////////////////// header /////////////////////////////////////////////////////////////////*/
 
-/* header */
 .header {
-  width: 99vw;
-  background-color: bisque;
+  width: 100vw;
+  background-color: #fff1e1;
   z-index: 100;
   transition: top 1s;
 }
@@ -104,7 +113,6 @@ svg {
   top: 0;
   left: 0;
 }
-
 
 .title {
   display: flex;
@@ -122,23 +130,20 @@ svg {
   align-items: center;
   font-size: 1rem;
   width: 27vw;
-  background-color: #a1a1a1;
+  background-color: #eadbc8;
   height: 2.7vh;
   border-radius: 35px;
   padding: 13px;
 }
 
-
-
-
 .search input {
   width: 23vw;
   height: 4vh;
-  background-color: #a1a1a1;
+  background-color: transparent;
   border: 1px solid transparent;
   border-radius: 10px;
   font-size: 18px;
-  padding-left: 6px
+  padding-left: 6px;
 }
 
 .search input:focus {
@@ -146,8 +151,23 @@ svg {
 }
 
 .iconShop {
+  display: flex;
   position: relative;
   width: 7vw;
+  justify-content: flex-end;
+}
+
+.itemAmount {
+  position: absolute;
+  right: -1.5vw;
+  top: -2.4vh;
+  background-color: rgb(228, 88, 88);
+  border-radius: 20px;
+  width: 37px;
+  height: 37px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .search svg {
@@ -160,16 +180,7 @@ svg {
 }
 
 .iconShop h2 {
-  position: absolute;
-  right: 59px;
-  top: -16px;
-  background-color: rgb(228, 88, 88);
-  border-radius: 20px;
-  width: 23px;
-  height: 25px;
-  text-align: center;
 }
-
 
 .lineaNegra {
   width: 76%;
@@ -177,7 +188,6 @@ svg {
   height: 1px;
   background-color: #3b2525;
 }
-
 
 .list {
   display: flex;
@@ -187,7 +197,6 @@ svg {
 .header.open .list {
   display: none;
 }
-
 
 .list figure {
   width: 17vw;
@@ -213,11 +222,7 @@ svg {
   display: none;
 }
 
-
-
-
-
-/* Products */
+/*///////////////////////////////////////////////////////////// Products /////////////////////////////////////////////////////////////////*/
 .contentProducts {
   display: flex;
   flex-wrap: wrap;
@@ -228,15 +233,15 @@ svg {
 
 .products {
   width: 311px;
-  height: 61vh;
-  margin-bottom: 8vh;
+  margin-bottom: 4vh;
 }
 
 .productsImg {
-  height: 77%;
-  margin-bottom: 1vw;
+  height: 52vh;
+  margin-bottom: 2vw;
   overflow: hidden;
   border: 5px solid #272829;
+  border-radius: 8px;
 }
 
 .productsImg img {
@@ -244,7 +249,7 @@ svg {
   height: 100%;
   background-position: center;
   background-size: cover;
-  transform: scale(1.01)
+  transform: scale(1.01);
 }
 
 .productsImg:hover img {
@@ -253,14 +258,13 @@ svg {
 }
 
 .productsInfo {
-  height: 23%;
 }
 
 .nameAdd {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
   margin-bottom: 0.8vh;
+  height: 7vh;
 }
 
 .nameAdd .icon {
@@ -269,7 +273,16 @@ svg {
 }
 
 .descriPrice {
-  padding: 0 7px;
+  height: 15vh;
+  padding: 0 0.7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.descriPrice p {
+  font-size: 2rem;
+  text-decoration: underline;
 }
 
 .productsInfo h2,
@@ -277,14 +290,7 @@ svg {
   margin-bottom: 0.7vh;
 }
 
-
-
-
-
-
-
-/* ProducDetails */
-
+/*//////////////////////////////////////////////////////// ProducDetails ///////////////////////////////////////////*/
 
 .productDetails {
   display: flex;
@@ -293,7 +299,6 @@ svg {
   justify-content: space-around;
   padding: 10vh 11vw;
 }
-
 
 .details {
   display: flex;
@@ -324,12 +329,9 @@ svg {
   margin-bottom: 2vh;
 }
 
-
-
 .similarProduct {
   overflow-y: scroll;
   height: 63vh;
-
 }
 
 .similarProduct figure {
@@ -342,36 +344,50 @@ svg {
   height: 100%;
 }
 
-/* Sidebar */
+/*//////////////////////////////////////////////////////////////////////// Sidebar/////////////////////////////////////////*/
 
 .Sidebar {
-  height: 100vh;
-  background-color: #C8AE7D;
-  position: fixed;
-  width: 0;
-  top: 0;
-  right: 0;
-  transition: 0.5s;
+  display: none;
 }
 
 .Sidebar.open {
+  background-color: #c8ae7d;
+  position: absolute;
+  transition: 0.5s;
+  display: block;
+  border-radius: 23px;
   width: 40%;
-  height: 100vh;
+  height: 76vh;
+  top: 4rem;
+  right: 1px;
+  z-index: 2;
+  overflow: hidden;
 }
-
 
 .shopping {
   display: flex;
   width: 100%;
-  height: 13%;
+  height: 12%;
+  align-items: center;
+  background-color: #858776;
+  border-radius: 16px;
+}
+
+.shoppingIcon {
+  font-size: 3rem;
+  margin: 0 9rem 0 2rem;
 }
 
 .cartItems {
-  height: 73%;
-  overflow-y: scroll;
-  padding: 2vw;
+  height: 64%;
+  overflow-y: auto;
+  margin: 0rem;
+  border: solid 2rem #c8ae7d;
+  border-radius: 41px;
+  /* padding: 2rem; */
   display: flex;
   flex-direction: column;
+  background-color: hsl(0, 0%, 95%);
 }
 
 .cartItem {
@@ -380,7 +396,9 @@ svg {
   margin: 7px;
   background-color: #fff;
 }
-
+.cartItem svg {
+  font-size: 2rem;
+}
 .cartItem img {
   width: 80px;
 }
@@ -391,16 +409,20 @@ svg {
 }
 
 .total {
-  height: 13%;
+  height: 15%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.total svg {
+  font-size: 2rem;
 }
 
 @media (max-width: 850px) {
   .Sidebar.open {
     width: 100vw;
   }
-
 }
 
 /* footer */
@@ -433,7 +455,6 @@ svg {
 .footer li,
 .footer h3 {
   margin-bottom: 1.8vh;
-
 }
 
 .social-media svg {

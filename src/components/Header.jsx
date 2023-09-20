@@ -5,11 +5,12 @@ import { FiSearch } from "react-icons/fi";
 import { SidebarContext } from "../contexts/SidebarContext";
 import { CartContext } from "../contexts/CartContext";
 import { ProductContext } from "../contexts/ProductContext";
+import Sidebar from "./Sidebar";
 
 const Header = () => {
   // Contextos
   const { producTaught, valor } = useContext(ProductContext);
-  const { isOpen, setIsOpen } = useContext(SidebarContext);
+  const { isOpen, setIsOpen, handleClose } = useContext(SidebarContext);
   const { itemAmount } = useContext(CartContext);
 
   // Estado para el efecto de scroll
@@ -21,6 +22,7 @@ const Header = () => {
       const scrollY = window.scrollY;
       setIsActive(scrollY > 40 && scrollY < prevScrollY);
       prevScrollY = scrollY;
+      handleClose(false);
     };
 
     let prevScrollY = window.scrollY;
@@ -50,7 +52,9 @@ const Header = () => {
           />
         </div>
         <div className="iconShop" onClick={() => setIsOpen(!isOpen)}>
-          <h2>{itemAmount}</h2>
+          <div className="itemAmount">
+            <h2>{itemAmount}</h2>
+          </div>
           <AiOutlineShoppingCart />
         </div>
       </div>
@@ -64,6 +68,7 @@ const Header = () => {
           </Link>
         ))}
       </div>
+      <Sidebar />
     </section>
   );
 };

@@ -4,7 +4,7 @@ export const ListOfProducts = [
     name: "Nike SuperRep Go 2",
     characteristics: "Men",
     descriptions:
-      "as Nike SuperRep Go son zapatillas deportivas diseñadas para entrenamientos de alta intensidad y actividades aeróbicas. Ofrecen amortiguación y soporte para ayudar a los atletas a mantenerse cómodos durante sus sesiones de ejercicio.",
+      "Las Nike SuperRep Go son zapatillas deportivas diseñadas para entrenamientos de alta intensidad y actividades aeróbicas. Ofrecen amortiguación y soporte para ayudar a los atletas a mantenerse cómodos durante sus sesiones de ejercicio.",
     price: "95",
 
     img: "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=764&q=80",
@@ -56,7 +56,7 @@ export const ListOfProducts = [
   },
   {
     id: "7",
-    name: "ZAPATILLAS ANAHEIM FACTORY SK8-HI 38 DX",
+    name: "ZAPATILLAS ANAHEIM FACTORY",
     characteristics: "Men",
     descriptions:
       "Las zapatillas Vans Anaheim Factory Sk8-Hi 38 DX son un clásico reinventado con un toque vintage y detalles de calidad. Estas zapatillas de skate de alta calidad presentan una parte superior de lona y ante con detalles retro de la fábrica original de Vans en Anaheim, California. ",
@@ -173,7 +173,7 @@ export const ListOfProducts = [
   },
   {
     id: "19",
-    name: "Women's originalGrand Wingtip Oxford",
+    name: "Women's original Grand Wingtip Oxford",
     characteristics: "Women",
     descriptions:
       "Los Women's originalGrand Wingtip Oxford son un par de zapatos oxford de ala de la conocida marca Cole Haan. Estos zapatos son conocidos por combinar la elegancia clásica con la comodidad moderna, gracias a su tecnología Grand.",

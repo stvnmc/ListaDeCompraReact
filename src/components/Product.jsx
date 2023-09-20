@@ -40,9 +40,10 @@ const Product = ({ products }) => {
             onClick={() => addToCart(products, id)}
           />
         </div>
+        <div className="lineaNegra"></div>
         <div className="descriPrice">
           <h3>{truncatedDescription}</h3>
-          <p>$ {price}</p>
+          <p>${price}</p>
         </div>
       </div>
     </figure>

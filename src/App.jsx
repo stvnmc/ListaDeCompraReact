@@ -1,29 +1,23 @@
-import React, { useContext } from "react";
+import React from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import Sidebar from "./components/Sidebar";
-import { SidebarContext } from "./contexts/SidebarContext";
 import Home from "./pages/Home";
 
 function App() {
-  const { isOpen } = useContext(SidebarContext);
   return (
     <React.Fragment>
       <Router>
         <Header />
-        <section className={`home ${isOpen ? "open" : ""}`}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/product" element={<Products />} />
-            <Route path="/All" element={<Products />} />
-            <Route path="/product/:id" element={<ProductDetails />} />
-          </Routes>
-          <Sidebar />
-        </section>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/product" element={<Products />} />
+          <Route path="/All" element={<Products />} />
+          <Route path="/product/:id" element={<ProductDetails />} />
+        </Routes>
         <Footer />
       </Router>
     </React.Fragment>

@@ -12,7 +12,9 @@ const Sidebar = () => {
   return (
     <section className={`Sidebar ${isOpen ? "open" : ""}`}>
       <div className="shopping">
-        <GoArrowLeft onClick={() => handleClose()} />
+        <div className="shoppingIcon">
+          <GoArrowLeft onClick={() => handleClose()} />
+        </div>
         <h2>Shopping BAG({itemAmount})</h2>
       </div>
       <div className="cartItems">

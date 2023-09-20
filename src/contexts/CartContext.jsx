@@ -14,7 +14,7 @@ const CartProvider = ({ children }) => {
     const cartItem = cart.find((item) => {
       return item.id === id;
     });
-    
+
     if (cartItem) {
       const newCart = [...cart].map((item) => {
         if (item.id === id) {
@@ -70,7 +70,6 @@ const CartProvider = ({ children }) => {
   });
 
   //amount
-
   useEffect(() => {
     if (cart) {
       const amount = cart.reduce((accumulator, currentItem) => {

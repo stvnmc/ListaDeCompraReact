@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { imgUrlHome } from "../data/infoOfPage";
+import { imgUrlHome, promo } from "../data/infoOfPage";
 
 const VerticalLetters = () => {
-  const text = "Text Ejemplo";
+  const text = "Be--free--your--way";
   const letters = text.split("");
   return (
     <>
@@ -38,13 +38,6 @@ const Home = () => {
     };
   }, []);
 
-  const promo = [
-    "New Markdowns: Up to 40% Off",
-    "Shop All New Arrivals",
-    "Members: Free Shipping on Orders $50+",
-    "Why Wait? Try Store Pickup",
-  ];
-
   const gridItems = [
     {
       content: <img src={imgUrlHome.img1} alt="Descripción de la imagen" />,
@@ -52,11 +45,17 @@ const Home = () => {
     },
     {
       content: (
-        <Link to={"/product"}>
-          <h1>products</h1>
-          <h1>productssdfdsfsdsdfsdf</h1>
-          <h1>productsfsdfsd</h1>
-        </Link>
+        <>
+          <Link to={"/product"}>
+            <h2>Products</h2>
+          </Link>
+          <Link to={"/product"}>
+            <h2>Hombre</h2>
+          </Link>
+          <Link to={"/product"}>
+            <h2>Mujer</h2>
+          </Link>
+        </>
       ),
       gridArea: "1 / 5 / 2 / 3",
     },
@@ -75,25 +74,7 @@ const Home = () => {
     {
       content: <VerticalLetters />,
       gridArea: "2 / 6 / 2 / 7",
-    },
-    {
-      content: <img src={imgUrlHome.img2} alt="Descripción de la imagen" />,
-      gridArea: "3 / 1 / 3 / 3",
-    },
-    {
-      content: (
-        <Link to={"/product"}>
-          <h1>products</h1>
-          <h1>productssdfdsfsdsdfsdf</h1>
-          <h1>productsfsdfsd</h1>
-        </Link>
-      ),
-      gridArea: "3 / 3 / 3 / 5",
-    },
-    {
-      content: <img src={imgUrlHome.img3} alt="Descripción de la imagen" />,
-      gridArea: "3 / 7 / 3 / 5",
-    },
+    }
   ];
 
   return (
@@ -104,8 +85,8 @@ const Home = () => {
       >
         {promo.map((item, index) => (
           <div key={index}>
-            <h1>{item}</h1>
-            <a>jasdsdsdsdfj</a>
+            <h1>{item.name}</h1>
+            <a>{item.text}</a>
           </div>
         ))}
       </div>
