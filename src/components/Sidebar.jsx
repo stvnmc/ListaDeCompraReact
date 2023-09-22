@@ -8,7 +8,9 @@ import { AiOutlineDelete } from "react-icons/ai";
 
 const Sidebar = () => {
   const { isOpen, handleClose } = useContext(SidebarContext);
-  const { cart, clearCart, total, itemAmount } = useContext(CartContext);
+  const { cart, clearCart, total, itemAmount, messageListRef } =
+    useContext(CartContext);
+
   return (
     <section className={`Sidebar ${isOpen ? "open" : ""}`}>
       <div className="shopping">
@@ -17,14 +19,17 @@ const Sidebar = () => {
         </div>
         <h2>Shopping BAG({itemAmount})</h2>
       </div>
-      <div className="cartItems">
+      <div className="cartItems" ref={messageListRef}>
         {cart.map((item, i) => {
           return <CartItem item={item} key={i} />;
         })}
       </div>
       <div className="total">
         <h2>Total: {total}</h2>
-        <AiOutlineDelete onClick={() => clearCart()} />
+
+        <div>
+          <AiOutlineDelete onClick={() => clearCart()} />
+        </div>
       </div>
     </section>
   );

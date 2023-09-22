@@ -1,4 +1,4 @@
-import React, { createContext, useEffect, useState } from "react";
+import React, { createContext, useEffect, useState, useRef } from "react";
 
 export const CartContext = createContext();
 
@@ -6,6 +6,7 @@ const CartProvider = ({ children }) => {
   const [cart, setCart] = useState([]);
   const [itemAmount, setItemAmount] = useState(0);
   const [total, setTotal] = useState(0);
+  const messageListRef = useRef(null);
 
   const addToCart = (products, id) => {
     const newItem = { ...products, amount: 1 };
@@ -27,6 +28,10 @@ const CartProvider = ({ children }) => {
     } else {
       setCart([...cart, newItem]);
     }
+
+    setTimeout(() => {
+      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+    }, 10);
   };
 
   const removeFromCart = (id) => {
@@ -90,6 +95,7 @@ const CartProvider = ({ children }) => {
         decreaseAmount,
         itemAmount,
         total,
+        messageListRef,
       }}
     >
       {children}

@@ -10,7 +10,7 @@ import Sidebar from "./Sidebar";
 const Header = () => {
   // Contextos
   const { producTaught, valor } = useContext(ProductContext);
-  const { isOpen, setIsOpen, handleClose } = useContext(SidebarContext);
+  const { isOpen, setIsOpen} = useContext(SidebarContext);
   const { itemAmount } = useContext(CartContext);
 
   // Estado para el efecto de scroll
@@ -22,7 +22,6 @@ const Header = () => {
       const scrollY = window.scrollY;
       setIsActive(scrollY > 40 && scrollY < prevScrollY);
       prevScrollY = scrollY;
-      handleClose(false);
     };
 
     let prevScrollY = window.scrollY;
@@ -53,7 +52,13 @@ const Header = () => {
         </div>
         <div className="iconShop" onClick={() => setIsOpen(!isOpen)}>
           <div className="itemAmount">
-            <h2>{itemAmount}</h2>
+            {itemAmount < 10 ? (
+              <h2>{itemAmount}</h2>
+            ) : (
+              <h2>
+                9<sup className="super">+</sup>
+              </h2>
+            )}
           </div>
           <AiOutlineShoppingCart />
         </div>

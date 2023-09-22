@@ -11,16 +11,16 @@ const CartItem = ({ item }) => {
   return (
     <figure className="cartItem">
       <img src={`${img}`} />
-      <div>
+      <div className="infoCart">
         <h2>{name}</h2>
         <div className="productNum">
           <GrFormSubtract onClick={() => decreaseAmount(id)} />
           <h2>{amount}</h2>
           <GrFormAdd onClick={() => increaseAmount(id)} />
-          <div>$ {price * amount}</div>
+          <div className="totalPrice">$ {price * amount}</div>
         </div>
       </div>
-      <GoX onClick={() => removeFromCart(id)} />
+      <GoX className="remove" onClick={() => removeFromCart(id)} />
     </figure>
   );
 };

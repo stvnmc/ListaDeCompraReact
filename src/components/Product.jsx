@@ -7,14 +7,13 @@ const Product = ({ products }) => {
   const { addToCart } = useContext(CartContext);
   const { img, name, id, descriptions, price } = products;
 
-  //   // Define la longitud máxima para la descripción
-  const maxDescriptionLength = 70;
+  
 
   // Trunca la descripción si es más larga que la longitud máxima
   const truncatedDescription =
-    descriptions.length > maxDescriptionLength ? (
+    descriptions.length > 70 ? (
       <>
-        {descriptions.slice(0, maxDescriptionLength)}
+        {descriptions.slice(0, 70)}
         <Link to={`/product/${id}`}>
           <span>... ver mas</span>
         </Link>
