@@ -7,9 +7,6 @@ const Product = ({ products }) => {
   const { addToCart } = useContext(CartContext);
   const { img, name, id, descriptions, price } = products;
 
-  
-
-  // Trunca la descripción si es más larga que la longitud máxima
   const truncatedDescription =
     descriptions.length > 70 ? (
       <>

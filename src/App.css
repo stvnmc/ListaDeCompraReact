@@ -329,7 +329,7 @@ svg {
 }
 
 .detailsImg {
-  width: 387px;
+  width: 425px;
   margin: 1rem;
   border: solid 12px #232323;
 }
@@ -395,7 +395,7 @@ svg {
   color: #937272;
 }
 
-.similarProduct svg:hover{
+.similarProduct svg:hover {
   transform: scale(1.4);
 }
 

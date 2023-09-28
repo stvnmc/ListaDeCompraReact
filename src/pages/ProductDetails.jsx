@@ -6,37 +6,41 @@ import { CartContext } from "../contexts/CartContext";
 //Icons
 import { BiMessageSquareAdd } from "react-icons/bi";
 import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
+import { SimilarProdContext } from "../contexts/SimilarProdContext";
 
 const ProductDetails = () => {
   const { id } = useParams();
   const { products } = useContext(ProductContext);
+  const { similarProducts, calculateSimilarProducts } =
+    useContext(SimilarProdContext);
   const { addToCart } = useContext(CartContext);
 
-  const product = products.find((item) => {
-    return item.id === id;
-  });
+  const product = products.find((item) => item.id === id);
+
+  const renderSimilarProducts = () => {
+    return similarProducts.map((items) => (
+      <Link to={`/product/${items.id}`} key={items.id}>
+        <figure>
+          <img src={items.img} alt={`Similar product ${items.id}`} />
+        </figure>
+      </Link>
+    ));
+  };
 
   if (!product) {
     return <section>Loading</section>;
   }
+
   const { name, price, descriptions, img } = product;
 
   return (
     <section className="productDetails">
       <div className="similarProduct">
-        <AiFillCaretUp />
+        <AiFillCaretUp onClick={() => calculateSimilarProducts(-1)} />
         <div>
-          {products.slice(0, 5).map((items, i) => {
-            return (
-              <Link to={`/product/${items.id}`} key={i}>
-                <figure>
-                  <img src={items.img} />
-                </figure>
-              </Link>
-            );
-          })}
+          <div>{renderSimilarProducts()}</div>
         </div>
-        <AiFillCaretDown />
+        <AiFillCaretDown onClick={() => calculateSimilarProducts(+1)} />
       </div>
       <div className="details">
         <div className="detailsImg">
