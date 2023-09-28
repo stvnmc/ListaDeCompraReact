@@ -26,12 +26,11 @@ const CartProvider = ({ children }) => {
       });
       setCart(newCart);
     } else {
+      setTimeout(() => {
+        messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
+      }, 10);
       setCart([...cart, newItem]);
     }
-
-    setTimeout(() => {
-      messageListRef.current.scrollTop = messageListRef.current.scrollHeight;
-    }, 10);
   };
 
   const removeFromCart = (id) => {

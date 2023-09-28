@@ -1,8 +1,11 @@
 import React, { useContext } from "react";
 import { Link, useParams } from "react-router-dom";
+//Context
 import { ProductContext } from "../contexts/ProductContext";
 import { CartContext } from "../contexts/CartContext";
+//Icons
 import { BiMessageSquareAdd } from "react-icons/bi";
+import { AiFillCaretUp, AiFillCaretDown } from "react-icons/ai";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -21,15 +24,19 @@ const ProductDetails = () => {
   return (
     <section className="productDetails">
       <div className="similarProduct">
-        {products.slice(0, 8).map((items, i) => {
-          return (
-            <Link to={`/product/${items.id}`} key={i}>
-              <figure>
-                <img src={items.img} />
-              </figure>
-            </Link>
-          );
-        })}
+        <AiFillCaretUp />
+        <div>
+          {products.slice(0, 5).map((items, i) => {
+            return (
+              <Link to={`/product/${items.id}`} key={i}>
+                <figure>
+                  <img src={items.img} />
+                </figure>
+              </Link>
+            );
+          })}
+        </div>
+        <AiFillCaretDown />
       </div>
       <div className="details">
         <div className="detailsImg">
@@ -40,8 +47,8 @@ const ProductDetails = () => {
             <h2>{name}</h2>
             <p>{descriptions}</p>
           </div>
-          <div>
-            <h2>{price}</h2>
+          <div className="detailsPriceIcon">
+            <h2>${price}</h2>
             <BiMessageSquareAdd onClick={() => addToCart(product, id)} />
           </div>
         </div>
